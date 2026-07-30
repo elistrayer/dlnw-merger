@@ -1,0 +1,9 @@
+# Ignore data directories
+data/raw/
+data/clean/
+
+# Standard Python ignores
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
