@@ -1,0 +1,193 @@
+Filename,Year,Quarter,Filter,Rows Before,Rows After,Passengers Before,Passengers After
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,File Read,4776596,4776596,10651641.0,10651641.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,NaN Drop,4776596,4776596,10651641.0,10651641.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Bulk Fare,4776596,4775640,10651641.0,10649616.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Carrier Change,4775640,4537883,10649616.0,10393698.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Geography Restriction,4537883,4259324,10393698.0,9777301.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Fare Min (fixed),4259324,4039635,9777301.0,9228168.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Fare Max (fixed),4039635,4039505,9228168.0,9228037.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_1.csv,2006,1,Collapse,4039505,76576,9228037.0,9228037.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,File Read,5476476,5476476,12064290.0,12064290.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,NaN Drop,5476476,5476476,12064290.0,12064290.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Bulk Fare,5476476,5475587,12064290.0,12062866.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Carrier Change,5475587,5191781,12062866.0,11755353.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Geography Restriction,5191781,4869470,11755353.0,11022906.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Fare Min (fixed),4869470,4611722,11022906.0,10395341.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Fare Max (fixed),4611722,4611373,10395341.0,10394938.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_2.csv,2006,2,Collapse,4611373,80171,10394938.0,10394938.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,File Read,5139735,5139735,11555683.0,11555683.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,NaN Drop,5139735,5139735,11555683.0,11555683.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Bulk Fare,5139735,5138848,11555683.0,11554433.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Carrier Change,5138848,4872438,11554433.0,11268697.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Geography Restriction,4872438,4565061,11268697.0,10533150.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Fare Min (fixed),4565061,4268883,10533150.0,9833075.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Fare Max (fixed),4268883,4268631,9833075.0,9832820.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_3.csv,2006,3,Collapse,4268631,82613,9832820.0,9832820.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,File Read,5141974,5141974,11641650.0,11641650.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,NaN Drop,5141974,5141974,11641650.0,11641650.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Bulk Fare,5141974,5139410,11641650.0,11638461.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Carrier Change,5139410,4889791,11638461.0,11371245.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Geography Restriction,4889791,4603544,11371245.0,10700884.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Fare Min (fixed),4603544,4343094,10700884.0,10076280.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Fare Max (fixed),4343094,4342823,10076280.0,10076008.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2006_4.csv,2006,4,Collapse,4342823,81870,10076008.0,10076008.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,File Read,4795202,4795202,10786370.0,10786370.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,NaN Drop,4795202,4795202,10786370.0,10786370.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Bulk Fare,4795202,4792320,10786370.0,10782530.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Carrier Change,4792320,4553579,10782530.0,10525404.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Geography Restriction,4553579,4272667,10525404.0,9873585.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Fare Min (fixed),4272667,4031579,9873585.0,9305030.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Fare Max (fixed),4031579,4031213,9305030.0,9304657.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_1.csv,2007,1,Collapse,4031213,78557,9304657.0,9304657.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,File Read,5388985,5388985,12245829.0,12245829.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,NaN Drop,5388985,5388985,12245829.0,12245829.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Bulk Fare,5388985,5385010,12245829.0,12240180.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Carrier Change,5385010,5110050,12240180.0,11942833.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Geography Restriction,5110050,4787114,11942833.0,11169953.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Fare Min (fixed),4787114,4515524,11169953.0,10525038.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Fare Max (fixed),4515524,4515120,10525038.0,10524628.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_2.csv,2007,2,Collapse,4515120,78669,10524628.0,10524628.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,File Read,5255983,5255983,11860703.0,11860703.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,NaN Drop,5255983,5255983,11860703.0,11860703.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Bulk Fare,5255983,5252339,11860703.0,11855307.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Carrier Change,5252339,4982386,11855307.0,11566458.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Geography Restriction,4982386,4665306,11566458.0,10781903.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Fare Min (fixed),4665306,4379960,10781903.0,10084286.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Fare Max (fixed),4379960,4379536,10084286.0,10083848.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_3.csv,2007,3,Collapse,4379536,77730,10083848.0,10083848.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,File Read,5338581,5338581,11515614.0,11515614.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,NaN Drop,5338581,5338581,11515614.0,11515614.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Bulk Fare,5338581,5334611,11515614.0,11510254.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Carrier Change,5334611,5088402,11510254.0,11249601.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Geography Restriction,5088402,4789648,11249601.0,10565879.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Fare Min (fixed),4789648,4510779,10565879.0,9872833.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Fare Max (fixed),4510779,4510362,9872833.0,9872296.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2007_4.csv,2007,4,Collapse,4510362,77126,9872296.0,9872296.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,File Read,4976283,4976283,10605272.0,10605272.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,NaN Drop,4976283,4976283,10605272.0,10605272.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Bulk Fare,4976283,4971964,10605272.0,10598990.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Carrier Change,4971964,4742029,10598990.0,10353309.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Geography Restriction,4742029,4448082,10353309.0,9691628.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Fare Min (fixed),4448082,4211439,9691628.0,9086053.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Fare Max (fixed),4211439,4210879,9086053.0,9085276.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_1.csv,2008,1,Collapse,4210879,71739,9085276.0,9085276.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,File Read,5939525,5939525,11990406.0,11990406.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,NaN Drop,5939525,5939519,11990406.0,11990400.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Bulk Fare,5939519,5935878,11990400.0,11985261.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Carrier Change,5935878,5668036,11985261.0,11699564.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Geography Restriction,5668036,5338405,11699564.0,10994029.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Fare Min (fixed),5338405,5060337,10994029.0,10310585.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Fare Max (fixed),5060337,5059662,10310585.0,10309539.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_2.csv,2008,2,Collapse,5059662,77549,10309539.0,10309539.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,File Read,5251799,5251799,11310327.0,11310327.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,NaN Drop,5251799,5251799,11310327.0,11310327.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Bulk Fare,5251799,5248794,11310327.0,11306157.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Carrier Change,5248794,4995050,11306157.0,11035137.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Geography Restriction,4995050,4696552,11035137.0,10361006.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Fare Min (fixed),4696552,4404945,10361006.0,9630480.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Fare Max (fixed),4404945,4404256,9630480.0,9629274.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_3.csv,2008,3,Collapse,4404256,76679,9629274.0,9629274.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,File Read,5065356,5065356,10710695.0,10710695.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,NaN Drop,5065356,5065356,10710695.0,10710695.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Bulk Fare,5065356,5062650,10710695.0,10707226.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Carrier Change,5062650,4835227,10707226.0,10466064.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Geography Restriction,4835227,4572071,10466064.0,9878757.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Fare Min (fixed),4572071,4306071,9878757.0,9224578.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Fare Max (fixed),4306071,4305607,9224578.0,9223626.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2008_4.csv,2008,4,Collapse,4305607,74161,9223626.0,9223626.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,File Read,4383572,4383572,9666533.0,9666533.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,NaN Drop,4383572,4383572,9666533.0,9666533.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Bulk Fare,4383572,4378333,9666533.0,9659031.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Carrier Change,4378333,4153300,9659031.0,9419627.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Geography Restriction,4153300,3892292,9419627.0,8838317.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Fare Min (fixed),3892292,3679860,8838317.0,8295696.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Fare Max (fixed),3679860,3679168,8295696.0,8294570.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_1.csv,2009,1,Collapse,3679168,72407,8294570.0,8294570.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,File Read,5229471,5229471,11254836.0,11254836.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,NaN Drop,5229471,5229471,11254836.0,11254836.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Bulk Fare,5229471,5220012,11254836.0,11239362.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Carrier Change,5220012,4935599,11239362.0,10937016.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Geography Restriction,4935599,4647019,10937016.0,10258141.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Fare Min (fixed),4647019,4398089,10258141.0,9650749.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Fare Max (fixed),4398089,4397235,9650749.0,9649544.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_2.csv,2009,2,Collapse,4397235,77313,9649544.0,9649544.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,File Read,5330911,5330911,11060828.0,11060828.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,NaN Drop,5330911,5330911,11060828.0,11060828.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Bulk Fare,5330911,5323581,11060828.0,11049371.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Carrier Change,5323581,5025390,11049371.0,10736520.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Geography Restriction,5025390,4745229,10736520.0,10059391.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Fare Min (fixed),4745229,4479102,10059391.0,9406632.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Fare Max (fixed),4479102,4478226,9406632.0,9405387.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_3.csv,2009,3,Collapse,4478226,77823,9405387.0,9405387.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,File Read,5477362,5477362,10552647.0,10552647.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,NaN Drop,5477362,5477362,10552647.0,10552647.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Bulk Fare,5477362,5475053,10552647.0,10549491.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Carrier Change,5475053,5190534,10549491.0,10254329.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Geography Restriction,5190534,4929913,10254329.0,9670358.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Fare Min (fixed),4929913,4684275,9670358.0,9073358.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Fare Max (fixed),4684275,4683499,9073358.0,9072028.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2009_4.csv,2009,4,Collapse,4683499,77190,9072028.0,9072028.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,File Read,4906864,4906864,9695744.0,9695744.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,NaN Drop,4906864,4906864,9695744.0,9695744.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Bulk Fare,4906864,4904063,9695744.0,9691904.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Carrier Change,4904063,4686990,9691904.0,9463649.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Geography Restriction,4686990,4420684,9463649.0,8871973.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Fare Min (fixed),4420684,4205690,8871973.0,8323120.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Fare Max (fixed),4205690,4204894,8323120.0,8321997.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_1.csv,2010,1,Collapse,4204894,75123,8321997.0,8321997.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,File Read,5782414,5782414,11135478.0,11135478.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,NaN Drop,5782414,5782414,11135478.0,11135478.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Bulk Fare,5782414,5778507,11135478.0,11130124.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Carrier Change,5778507,5551240,11130124.0,10890888.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Geography Restriction,5551240,5244387,10890888.0,10207573.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Fare Min (fixed),5244387,4992447,10207573.0,9573444.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Fare Max (fixed),4992447,4991491,9573444.0,9572189.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_2.csv,2010,2,Collapse,4991491,72553,9572189.0,9572189.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,File Read,5613491,5613491,11181589.0,11181589.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,NaN Drop,5613491,5613491,11181589.0,11181589.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Bulk Fare,5613491,5609898,11181589.0,11176625.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Carrier Change,5609898,5374583,11176625.0,10929430.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Geography Restriction,5374583,5072570,10929430.0,10226865.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Fare Min (fixed),5072570,4793601,10226865.0,9514144.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Fare Max (fixed),4793601,4792733,9514144.0,9512960.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_3.csv,2010,3,Collapse,4792733,73203,9512960.0,9512960.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,File Read,5735916,5735916,11080105.0,11080105.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,NaN Drop,5735916,5735916,11080105.0,11080105.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Bulk Fare,5735916,5732739,11080105.0,11075885.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Carrier Change,5732739,5510174,11075885.0,10844053.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Geography Restriction,5510174,5219748,10844053.0,10227207.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Fare Min (fixed),5219748,4967349,10227207.0,9595464.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Fare Max (fixed),4967349,4966672,9595464.0,9594482.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2010_4.csv,2010,4,Collapse,4966672,73058,9594482.0,9594482.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,File Read,5382059,5382059,9926473.0,9926473.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,NaN Drop,5382059,5382059,9926473.0,9926473.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Bulk Fare,5382059,5378329,9926473.0,9921248.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Carrier Change,5378329,5170699,9921248.0,9704444.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Geography Restriction,5170699,4878046,9704444.0,9104204.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Fare Min (fixed),4878046,4647432,9104204.0,8514930.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Fare Max (fixed),4647432,4646541,8514930.0,8513801.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_1.csv,2011,1,Collapse,4646541,70696,8513801.0,8513801.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,File Read,5935437,5935437,11467028.0,11467028.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,NaN Drop,5935437,5935437,11467028.0,11467028.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Bulk Fare,5935437,5929630,11467028.0,11458299.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Carrier Change,5929630,5659785,11458299.0,11174739.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Geography Restriction,5659785,5337624,11174739.0,10497837.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Fare Min (fixed),5337624,5067611,10497837.0,9805664.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Fare Max (fixed),5067611,5066503,9805664.0,9804116.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_2.csv,2011,2,Collapse,5066503,73752,9804116.0,9804116.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,File Read,5931080,5931080,11318665.0,11318665.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,NaN Drop,5931080,5931080,11318665.0,11318665.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Bulk Fare,5931080,5925511,11318665.0,11310069.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Carrier Change,5925511,5656387,11310069.0,11029012.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Geography Restriction,5656387,5331469,11029012.0,10337456.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Fare Min (fixed),5331469,5043674,10337456.0,9607825.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Fare Max (fixed),5043674,5042552,9607825.0,9606430.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_3.csv,2011,3,Collapse,5042552,75275,9606430.0,9606430.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,File Read,5750599,5750599,10959811.0,10959811.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,NaN Drop,5750599,5750599,10959811.0,10959811.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Bulk Fare,5750599,5746786,10959811.0,10954456.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Carrier Change,5746786,5510057,10954456.0,10708383.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Geography Restriction,5510057,5204704,10708383.0,10095053.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Fare Min (fixed),5204704,4945531,10095053.0,9416601.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Fare Max (fixed),4945531,4943627,9416601.0,9413810.0
+/Users/elistrayer/dlnw-merger/data/raw/Origin_and_Destination_Survey_DB1BMarket_2011_4.csv,2011,4,Collapse,4943627,75845,9413810.0,9413810.0
