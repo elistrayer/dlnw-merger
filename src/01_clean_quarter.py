@@ -6,17 +6,27 @@ import config as cfg
 main_dir = Path(__file__).parent.parent
 csv_folder = main_dir / "data" / "raw"
 paths = sorted(csv_folder.glob("*csv"))
+assert len(paths) == 24, f"Expected 24 CSVs, only found {len(paths)}"
+
+clean_folder = main_dir / "data" / "clean"
+clean_folder.mkdir(parents=True, exist_ok=True)
+
+def to_int(s, name, dt):
+    assert s.notna().all(), f"NaN Values present in {name} column, cannot cast to {dt}"
+    info = np.iinfo(dt)
+    assert s.min() >= info.min and s.max() <= info.max, f"Overflow error for {dt} in {name} column."
+    return s.astype(dt)
 
 audit = []
 for p in paths:
     df = pd.read_csv(p, usecols=cfg.DATA_COLS, dtype=cfg.DATA_TYPES)
-    df.info()
+    print(f"Reading File {p.name}")
 
     raw_rows = len(df)
     raw_pax = df["Passengers"].sum()
     year = df["Year"].iloc[0]
     quarter = df["Quarter"].iloc[0]
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "File Read", "Rows Before": raw_rows, "Rows After": 
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "File Read", "Rows Before": raw_rows, "Rows After": 
                 raw_rows, "Passengers Before": raw_pax, "Passengers After": raw_pax})
 
     df = df.dropna(subset=["MktFare", "Passengers", "Origin", "Dest", "TkCarrier", "MktCoupons", 
@@ -24,15 +34,10 @@ for p in paths:
     post_nan_rows = len(df)
     post_nan_pax = df["Passengers"].sum()
 
-    assert (post_nan_rows - raw_rows) / raw_rows > -0.01, f"Dropped NaN Rows exceeded 1%: {(post_nan_rows - raw_rows) / raw_rows}%"
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "NaN Drop", "Rows Before": raw_rows, "Rows After": 
+    assert (post_nan_rows - raw_rows) / raw_rows > -0.01, f"Dropped NaN Rows exceeded 1%: {(post_nan_rows - raw_rows) / raw_rows}"
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "NaN Drop", "Rows Before": raw_rows, "Rows After": 
                 post_nan_rows, "Passengers Before": raw_pax, "Passengers After": post_nan_pax})
 
-    def to_int(s, name, dt):
-        assert s.notna().all(), f"NaN Values present in {name} column, cannot cast to {dt}"
-        info = np.iinfo(dt)
-        assert s.min() >= info.min and s.max() <= info.max, f"Overflow error for {dt} in {name} column."
-        return s.astype(dt)
 
     for col, dt in cfg.INT_COLS.items():
         df[col] = to_int(df[col], col, dt,)
@@ -40,32 +45,38 @@ for p in paths:
     df = df[df["BulkFare"] != 1]
     post_bulk_rows = len(df)
     post_bulk_pax = df["Passengers"].sum()
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Bulk Fare", "Rows Before": post_nan_rows, "Rows After": 
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "Bulk Fare", "Rows Before": post_nan_rows, "Rows After": 
                 post_bulk_rows, "Passengers Before": post_nan_pax, "Passengers After": post_bulk_pax})
 
     df = df[df["TkCarrierChange"] != 1]
     post_cchange_rows = len(df)
     post_cchange_pax = df["Passengers"].sum()
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Carrier Change", "Rows Before": post_bulk_rows, "Rows After": 
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "Carrier Change", "Rows Before": post_bulk_rows, "Rows After": 
                 post_cchange_rows, "Passengers Before": post_bulk_pax, "Passengers After": post_cchange_pax})
 
     df = df[df["MktGeoType"] == 2]
     post_mktgeo_rows = len(df)
     post_mktgeo_pax = df["Passengers"].sum()
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Geography Restriction", "Rows Before": post_cchange_rows, "Rows After": 
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "Geography Restriction", "Rows Before": post_cchange_rows, "Rows After": 
                 post_mktgeo_rows, "Passengers Before": post_cchange_pax, "Passengers After": post_mktgeo_pax})
+
+    df = df[df["MktCoupons"] <= cfg.MAX_COUPONS]
+    post_coupon_rows = len(df)
+    post_coupon_pax = df["Passengers"].sum()
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "Coupon Restriction", "Rows Before": post_mktgeo_rows, "Rows After": 
+                post_coupon_rows, "Passengers Before": post_mktgeo_pax, "Passengers After": post_coupon_pax})
 
     if cfg.TRIM_MODE == "fixed":
         df = df[(df["MktFare"] > cfg.FARE_MIN)]
         post_faremin_rows = len(df)
         post_faremin_pax = df["Passengers"].sum()
-        audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Fare Min (fixed)", "Rows Before": post_mktgeo_rows, "Rows After": 
-                post_faremin_rows, "Passengers Before": post_mktgeo_pax, "Passengers After": post_faremin_pax})
+        audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": f"Fare Min (fixed: ${cfg.FARE_MIN})", "Rows Before": post_coupon_rows, "Rows After": 
+                post_faremin_rows, "Passengers Before": post_coupon_pax, "Passengers After": post_faremin_pax})
 
         df = df[(df["MktFare"] < cfg.FARE_MAX)]
         post_faremax_rows = len(df)
         post_faremax_pax = df["Passengers"].sum()
-        audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Fare Max (fixed)", "Rows Before": post_faremin_rows, "Rows After": 
+        audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": f"Fare Max (fixed: ${cfg.FARE_MAX})", "Rows Before": post_faremin_rows, "Rows After": 
                 post_faremax_rows, "Passengers Before": post_faremin_pax, "Passengers After": post_faremax_pax})
 
     elif cfg.TRIM_MODE == "percentile":
@@ -75,13 +86,13 @@ for p in paths:
         df = df[(df["MktFare"] > lower_limit)]
         post_faremin_rows = len(df)
         post_faremin_pax = df["Passengers"].sum()
-        audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Fare Min (percentile)", "Rows Before": post_mktgeo_rows, "Rows After": 
-                post_faremin_rows, "Passengers Before": post_mktgeo_pax, "Passengers After": post_faremin_pax})
+        audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": f"Fare Min (percentile: {cfg.FARE_PCT_MIN}%)", "Rows Before": post_coupon_rows, "Rows After": 
+                post_faremin_rows, "Passengers Before": post_coupon_pax, "Passengers After": post_faremin_pax})
 
         df = df[(df["MktFare"] < upper_limit)]
         post_faremax_rows = len(df)
         post_faremax_pax = df["Passengers"].sum()
-        audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Fare Max (percentile)", "Rows Before": post_faremin_rows, "Rows After": 
+        audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": f"Fare Max (percentile: {cfg.FARE_PCT_MAX}%)", "Rows Before": post_faremin_rows, "Rows After": 
                 post_faremax_rows, "Passengers Before": post_faremin_pax, "Passengers After": post_faremax_pax})
 
     else:
@@ -115,13 +126,14 @@ for p in paths:
 
     post_collapse_rows = len(g)
     post_collapse_pax = g["pax"].sum()
-    audit.append({"Filename": p, "Year": year, "Quarter": quarter, "Filter": "Collapse", "Rows Before": post_faremax_rows, "Rows After": 
-                post_collapse_rows, "Passengers Before": post_faremax_pax, "Passengers After": post_collapse_pax})
+    audit.append({"Filename": p.name, "Year": year, "Quarter": quarter, "Filter": "Collapse", "Rows Before": len(df), "Rows After": 
+                post_collapse_rows, "Passengers Before": df["Passengers"].sum(), "Passengers After": post_collapse_pax})
 
-    parquet_path = csv_folder = main_dir / "data" / "clean" / f"{p.stem}.parquet"
+    parquet_path = clean_folder / f"{p.stem}.parquet"
     g.to_parquet(parquet_path, engine="pyarrow", index=False)
 
 
 audit_path = main_dir / "output" / "audit.csv"
+(main_dir / "output").mkdir(parents=True, exist_ok=True)
 audit_df = pd.DataFrame(audit)
 audit_df.to_csv(audit_path, index=False)
