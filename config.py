@@ -1,8 +1,9 @@
-DATA_START, DATA_END = "2006Q1", "2011Q2"
+DATA_START, DATA_END = "2006Q1", "2011Q4"
 PRE_END = "2008Q1"
 TRANSITION = ("2008Q2", "2009Q4")
-POST_START = "2010Q1"
+POST_START = "2010Q2"
 ES_REFERENCE = "2008Q1"
+BASE_YEAR = 2006
 
 TRIM_MODE = "fixed"
 FARE_MIN, FARE_MAX = 25, 2500
@@ -38,3 +39,8 @@ INT_COLS = {
     "Passengers": "int32",
     "OriginCityMarketID": "int32", "DestCityMarketID": "int32",
 }
+
+def q_to_t(yearq):
+    year = int(yearq[:4])
+    quarter = int(yearq[-1])
+    return (year - BASE_YEAR) * 4 + quarter

@@ -22,7 +22,7 @@ for p in paths:
 df = pd.concat(data_list, ignore_index=True)
 df["route"] = df["route"].astype("category")
 df["yearq"] = df["Year"].astype(str) + 'Q' + df["Quarter"].astype(str)
-df["t"] = (df["Year"] - 2006) * 4 + df["Quarter"]
+df["t"] = (df["Year"] - cfg.BASE_YEAR) * 4 + df["Quarter"]
 assert not df.duplicated(subset=["route", "TkCarrier", "nonstop", "yearq"]).any()
 
 carrier_panel = df.copy()
