@@ -81,10 +81,10 @@ post = route_group["period"] == "post"
 route_group["treat_post"] = (route_group["group"] == "treated") & post
 assert route_group["period"].ne("UNASSIGNED").all()
 
-route_group.to_parquet(panel_folder / "route_group.parquet")
+route_group.to_parquet(panel_folder / "route_group.parquet", index=False)
 
 counts = route_group.groupby(["nonstop", "group"], observed=True).agg(
-    n_routes = ("route", "nuqiue"),
+    n_routes = ("route", "nunique"),
     n_route_quarters = ("route", "size"),
     total_pax = ("pax", "sum")
 ).reset_index()
@@ -92,12 +92,23 @@ counts = route_group.groupby(["nonstop", "group"], observed=True).agg(
 g = route_group.groupby(["nonstop","group"], observed=True)
 counts["mean_fare"] = (g["fx"].sum() / g["pax"].sum()).values
 
-counts.to_csv(main_dir / "output" / "treatment_summary.csv")
+counts.to_csv(main_dir / "output" / "treatment_summary.csv", index=False)
 print(counts)
 
 route_totals = route_group.groupby(["nonstop", "group", "route"], observed=True)["pax"].sum().reset_index()
 route_totals = route_totals.sort_values("pax", ascending=False)
 examples = route_totals.groupby(["nonstop","group"], observed=True).head(5)
 print(examples)
+
+pre_route_totals = route_group[route_group["period"] == "pre"]
+pre_route_totals = pre_route_totals.groupby(["route", "nonstop", "group"], observed=True).agg(pax_total=("pax", "sum"), dist=("dist", "mean"), 
+                                                                                              fx=("fx", "sum"), HHI=("HHI", "mean"), pax_per_qtr=("pax", "mean"))
+pre_route_totals = pre_route_totals.groupby(["group", "nonstop"], observed=True).agg(dist_mean=("dist", "mean"), HHI_mean=("HHI", "mean"), fx=("fx", "sum"), 
+                                                                                     pax=("pax_total", "sum"), pax_per_qtr=("pax_per_qtr", "mean")).reset_index()
+pre_route_totals["fare_mean"] = pre_route_totals["fx"] / pre_route_totals["pax"]
+print(pre_route_totals)
+
+conf = route_group.drop_duplicates(["route", "nonstop"])
+print(conf.groupby(["nonstop", "group"], observed=True)["confounded"].agg(["sum", "mean"]))
 
 pd.DataFrame(audit).to_csv(main_dir/"output"/"audit_step3.csv", index=False)
