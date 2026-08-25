@@ -1,0 +1,35 @@
+\begin{threeparttable}
+\begingroup
+\renewcommand\cellalign{t}
+\renewcommand\arraystretch{1}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+ & \multicolumn{4}{c}{log_fare} \\
+\cmidrule(lr){2-5}
+ & (1) & (2) & (3) & (4) \\
+\midrule
+\addlinespace[1ex]
+treat_post & \makecell{0.025*** \\ (0.004)} & \makecell{-0.017*** \\ (0.005)} & \makecell{0.170** \\ (0.057)} & \makecell{0.086 \\ (0.057)} \\
+\addlinespace[0.5ex]
+\midrule
+\addlinespace[1ex]
+ yearq & x & x & x & x \\
+\addlinespace[0.5ex]
+\addlinespace[0.5ex]
+route  & x & x & x & x \\
+\addlinespace[0.5ex]
+\midrule
+\addlinespace[1ex]
+Observations & 122,997 & 79,977 & 12,059 & 27,849 \\
+\addlinespace[0.5ex]
+\addlinespace[0.5ex]
+$R^2$ & 0.72 & 0.739 & 0.786 & 0.833 \\
+\addlinespace[0.5ex]
+\bottomrule
+\end{tabularx}
+\endgroup
+\noindent\begin{minipage}{\linewidth}\smallskip\footnotesize
+Significance levels: * p < 0.05, ** p < 0.01, *** p < 0.001. Format of coefficient cell: Coefficient   (Std. Error)\end{minipage}
+
+\end{threeparttable}
