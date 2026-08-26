@@ -3,13 +3,12 @@ import numpy as np
 from pathlib import Path
 import config as cfg
 
-audit = []
-
 main_dir = Path(__file__).parent.parent
 panel_folder = main_dir / "data" / "panels"
 carrier_panel = panel_folder / "carrier_shares.parquet"
 route_panel = panel_folder / "route_panel.parquet"
 
+audit = []
 carrier_shares = pd.read_parquet(carrier_panel)
 carrier_shares = carrier_shares[carrier_shares["t"] <= cfg.q_to_t(cfg.PRE_END)]
 assert (carrier_shares["t"].max() == cfg.q_to_t(cfg.PRE_END)) and (carrier_shares["t"].nunique() == cfg.q_to_t(cfg.PRE_END))
