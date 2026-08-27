@@ -2,15 +2,12 @@ import pyfixest as pf
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import config as cfg
-import matplotlib.pyplot as plt
+from scipy.stats import norm
 
 main_dir = Path(__file__).parent.parent
 panel_folder = main_dir / "data" / "panels"
 tables_folder = main_dir / "output" / "tables"
 route_group = pd.read_parquet(panel_folder / "route_group.parquet") 
-figures_folder = main_dir / "output" / "figures"
-figures_folder.mkdir(parents=True, exist_ok=True)
 
 def estimation_sample_function(df, segment, group):
     df = df[df["nonstop"] == segment]
@@ -25,7 +22,12 @@ def estimation_sample_function(df, segment, group):
 
     return df
 
+tests = ["baseline", "confounded_allowed", "balanced_routes", "placebo_merger", "pax_weighted"]
+
 def estimation_function(test):
+    if test not in tests:
+        raise ValueError(f"Unknown Test: {test}")
+    
     estimation_sample = route_group[route_group["group"] != "excluded"].copy()
     estimation_sample = estimation_sample[estimation_sample["period"] != "transition"]
 
@@ -50,16 +52,28 @@ def estimation_function(test):
         m = pf.feols("log_fare ~ treat_post | route + yearq", data=estimation_sample, vcov={"CRV1": "route"})
     
     m_values = m.tidy().iloc[0]
-    return m_values
+    observations = m._N
+    return m_values, observations
 
-baseline = estimation_function("baseline")
-confounded_allowed = estimation_function("confounded_allowed")
-balanced_routes = estimation_function("balanced_routes")
-placebo_merger = estimation_function("placebo_merger")
-pax_weighted = estimation_function("pax_weighted")
+rows = []
+for test in tests:
+    r, observations = estimation_function(test)
+    rows.append({"variant": test, "coef": r["Estimate"], "se": r["Std. Error"],
+                 "ci_lo": r["2.5%"], "ci_hi": r["97.5%"], "p": r["Pr(>|t|)"], "n": observations})
 
-robustness_checks = {"Baseline": baseline, "Confounded Allowed": confounded_allowed, "Balanced Routes": balanced_routes,
-                     "Placebo Merger": placebo_merger, "Pax Weighted": pax_weighted}
+robustness = pd.DataFrame(rows)
 
-robustness_checks = pd.DataFrame(robustness_checks)
-print(robustness_checks)
+Z = norm.ppf(0.975) + norm.ppf(0.80)
+robustness["mde_pct"] = (np.exp(Z * robustness["se"]) - 1) * 100
+
+robustness["coef_pct"] = (np.exp(robustness["coef"]) - 1) * 100
+robustness["ci_lo_pct"] = (np.exp(robustness["ci_lo"]) - 1) * 100
+robustness["ci_hi_pct"] = (np.exp(robustness["ci_hi"]) - 1) * 100
+
+robustness.to_csv(tables_folder / "robustness_results.csv", index=False)
+
+display = robustness[["variant", "n", "coef_pct", "ci_lo_pct", "ci_hi_pct", "p"]].copy()
+display_variant_names = {"baseline": "Baseline", "confounded_allowed": "Confounded Allowed", "balanced_routes": "Balanced Routes", 
+                         "placebo_merger": "Placebo Merger (2007)", "pax_weighted": "Passenger Weighted"}
+display["variant"] = display["variant"].replace(display_variant_names)
+display.to_latex(tables_folder / "table3_robustness.tex", float_format="%.2f", index=False)
