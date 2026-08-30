@@ -54,7 +54,19 @@ def make_descriptives(sample, is_nonstop, label):
         "dist_mean", "dist_std"
     ]]
 
-    summary_statistics.style.format("{:.2f}").to_latex(tables_folder / f"table1_{label}.tex", hrules=True)
+    summary_statistics = summary_statistics.rename(index={
+        "number_of_routes": "Number of Routes", "fare_mean": "Fare Mean", "pax_per_qtr_mean": "Pax per Quarter Mean",
+        "pax_per_qtr_std": "Pax per Quarter Std.", "n_carrier_mean": "Number of Carriers Mean", "n_carrier_std": "Number of Carriers Std.",
+        "HHI_mean": "HHI Mean", "HHI_std": "HHI Std.", "dist_mean": "Distance Mean", "dist_std": "Distance Std."
+    })
+
+    summary_statistics = summary_statistics.rename(columns={"control_A": "control A", "control_B": "control B"})
+
+    (summary_statistics.style
+        .format("{:.2f}")
+        .format("{:.0f}", subset=pd.IndexSlice["Number of Routes", :])
+        .to_latex(tables_folder / f"table1_{label}.tex", hrules=True)
+    )
 
     raw_trends = seg.set_index(["route", "yearq"])
     raw_trends["qpr"] = raw_trends.groupby("route", observed=True)["t"].transform("nunique")
@@ -78,7 +90,6 @@ def make_descriptives(sample, is_nonstop, label):
         plt.text(x=x_pos - 0.5, y=0.11, s=event, color="red", 
                 rotation=90, verticalalignment='top')
         
-    plt.title(f"Time Series Plot of Log Mean Fares ({label})")
     plt.xlabel("Year / Quarter")
     plt.ylabel("Log fares relative to 2008Q1")
     plt.grid(True)

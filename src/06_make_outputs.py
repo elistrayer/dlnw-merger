@@ -85,7 +85,6 @@ plt.axvspan(xmin=plt.xlim()[0], xmax=announcement_x - 0.5, color='gray', alpha=0
 
 plt.axhline(0, color='black', linestyle='--', linewidth=1)
 plt.xticks(rotation=45, ha='right')
-plt.title("Event Study Estimates")
 plt.xlabel("Quarter")
 plt.ylabel("Effect on Log Fare")
 plt.legend()

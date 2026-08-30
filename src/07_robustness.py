@@ -72,8 +72,18 @@ robustness["ci_hi_pct"] = (np.exp(robustness["ci_hi"]) - 1) * 100
 
 robustness.to_csv(tables_folder / "robustness_results.csv", index=False)
 
+def format_p_value(p):
+    if p < 0.001:
+        return "$<$0.001"
+    else:
+        return f"{p:.3f}"
+
 display = robustness[["variant", "n", "coef_pct", "ci_lo_pct", "ci_hi_pct", "p"]].copy()
 display_variant_names = {"baseline": "Baseline", "confounded_allowed": "Confounded Allowed", "balanced_routes": "Balanced Routes", 
                          "placebo_merger": "Placebo Merger (2007)", "pax_weighted": "Passenger Weighted"}
 display["variant"] = display["variant"].replace(display_variant_names)
+display["CI (\\%)"] = display.apply(lambda row: f"[{row['ci_lo_pct']:.2f}, {row['ci_hi_pct']:.2f}]", axis=1)
+display = display.drop(columns=["ci_lo_pct", "ci_hi_pct"])
+display = display.rename(columns={"coef_pct": "coef (\\%)"})
+display["p"] = display["p"].apply(format_p_value)
 display.to_latex(tables_folder / "table3_robustness.tex", float_format="%.2f", index=False)

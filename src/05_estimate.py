@@ -54,7 +54,12 @@ results["units"] = np.where(is_log, "percent", "HHI_points")
 
 results.to_csv(tables_folder /  "did_results.csv", index=False)
 
-for y in ["log_fare", "log_pax", "HHI"]:
-    subset = [models[k] for k in models if k[2] == y]
-    tex = pf.etable(subset, type="tex")
-    (tables_folder / f"table2_{y}.tex").write_text(str(tex))
+tab = results.copy()
+tab["spec"] = tab["segment"] + " / " + tab["control"].str.replace("control_", "Control ")
+wide = tab.pivot(index="spec", columns="outcome", values="pct") 
+wide["HHI"] = tab[tab.outcome=="HHI"].set_index("spec")["coef"]
+wide = wide[["log_fare", "log_pax", "HHI"]]
+wide = wide.rename(columns={"log_fare": "Fare (\\%)", "log_pax": "Passengers (\\%)",
+                            "HHI": "HHI (points)"})
+wide = wide.reset_index().rename(columns={"spec": "Specification"})
+wide.to_latex(tables_folder / f"table2.tex", float_format="%.2f", index=False)
