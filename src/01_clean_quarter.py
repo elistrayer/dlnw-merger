@@ -133,7 +133,17 @@ for p in paths:
     g.to_parquet(parquet_path, engine="pyarrow", index=False)
 
 
-audit_path = main_dir / "output" / "audit.csv"
-(main_dir / "output").mkdir(parents=True, exist_ok=True)
+output_path = main_dir / "output"
+output_path.mkdir(parents=True, exist_ok=True)
 audit_df = pd.DataFrame(audit)
-audit_df.to_csv(audit_path, index=False)
+
+drop_stats = audit_df.groupby("Filter", sort=False).agg(rows_before=("Rows Before", "sum"), rows_after=("Rows After", "sum"), 
+                                             pax_before=("Passengers Before", "sum"), pax_after=("Passengers After", "sum")).reset_index()
+raw_totals = drop_stats.loc[drop_stats.index[0], "rows_before"]
+drop_stats["pct_of_original_dropped"] = 1 - (drop_stats["rows_after"] / raw_totals)
+
+drop_stats["pct_row_dropped"] = 1 - (drop_stats["rows_after"] / drop_stats["rows_before"])
+drop_stats["pct_pax_dropped"] = 1 - (drop_stats["pax_after"] / drop_stats["pax_before"])
+drop_stats.to_csv(output_path / "drop_stats.csv", index=False)
+
+audit_df.to_csv(output_path / "audit.csv", index=False)
