@@ -12,3 +12,14 @@ data/clean/*
 
 data/panels/*
 !data/panels/.gitkeep
+
+output/*
+!output/.gitkeep
+!output/figures/
+!output/tables/
+
+output/figures/*
+!output/figures/.gitkeep
+
+output/tables/*
+!output/tables/.gitkeep
